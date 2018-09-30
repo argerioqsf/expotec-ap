@@ -1,0 +1,35 @@
+
+<ion-header >
+    <ion-navbar color="navbar">
+            <ion-row>
+                <button ion-button (click)="sideMenu()" clear item-start icon-only>
+                    <img id="menu" src="assets/images/menu_b.svg" /> 
+                </button>
+                <ion-title text-center><h5 id="titulo" text-center>Sobre</h5></ion-title>
+            </ion-row>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content  id="fundo_app">
+    <div id="cardInfo">
+        <div id="centro">
+            <img id="logoMaratona" src="assets/images/logo_expotec.png">
+        </div>
+        <h4 text-center><strong>GRUPO EXPOTEC AMAPÁ</strong></h4>
+        <p id="tab">{{subtitulo}}</p>
+    </div>
+    <h6 id="subtitulo">DESCRIÇÃO</h6>
+    <div id="cardInfoDesc">
+        <p id="tab">{{desc}}</p>
+        <h6  text-center>Redes sociais</h6>
+        <div id="centro">
+            <ion-row id="footer">
+                <div id="RS">
+                    <img id="RSlogo" (click)="redeSocial('https://www.facebook.com/Expotec-500141060456822/')" src="assets/images/face_p.png">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <img id="RSlogo" (click)="redeSocial('https://instagram.com/expotec.ap?utm_source=ig_profile_share&igshid=pqon6u0ym4cw')" src="assets/images/insta_p.png">
+                </div>
+            </ion-row>
+        </div>
+    </div>
+  </ion-content>

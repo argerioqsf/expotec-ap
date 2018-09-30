@@ -1,0 +1,22 @@
+
+<ion-header >
+  <ion-navbar color="navbar">
+          <ion-row>
+              <button ion-button (click)="sideMenu()" clear item-start icon-only>
+                  <img id="menu" src="assets/images/menu_b.svg" /> 
+              </button>
+              <ion-title text-center><h5 id="titulo" text-center>Mapa</h5></ion-title>
+          </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  id="fundo_app">
+  <div *ngIf="direction == 4" id="egg3">
+      (G = P) = P
+  </div>
+  <div (swipe)="swipeEvent($event)" [ngStyle]="torto" class="centroTotal">
+      <div id="centroMapa">
+        <img id="mapa" src="assets/images/mapa_legenda.png" >
+      </div>
+  </div>
+</ion-content>

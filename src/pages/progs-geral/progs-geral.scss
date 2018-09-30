@@ -1,0 +1,28 @@
+page-progs-geral {
+
+    #card{
+        line-height: 1.9;
+        height: 100%;
+        padding: 3px 0px 0px 0px;
+        text-transform: uppercase;
+    }
+
+    #fT{
+        background-color: rgb(255, 255, 255);
+    }
+    
+    #perder{
+        background-color: rgb(221, 220, 235);
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+    }
+
+    #perder2{
+        color: rgb(215, 215, 224);
+    }
+
+    #inputPerder{
+        border-style: hidden;
+        background-color: transparent;
+        width: 50px;
+    }
+}

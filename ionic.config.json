@@ -1,0 +1,7 @@
+{
+  "name": "expotec",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

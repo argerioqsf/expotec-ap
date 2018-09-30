@@ -1,0 +1,47 @@
+page-sobre {
+
+    #card{
+        line-height: 1.9;
+        height: 100%;
+        padding: 3px 0px 0px 0px;
+        text-transform: uppercase;
+    }
+
+    #fT{
+        background-color: rgb(255, 255, 255);
+    }
+    
+    #detalheLocal{
+        padding: 10px 10px 10px 10px;
+    }
+
+    #cardInfo{
+        padding: 1px 20px 1px 20px;
+        background-color: white;
+        text-transform: capitalize;
+    }
+
+    #cardInfoDesc{
+        padding: 1px 20px 1px 20px;
+        background-color: white;
+    }
+
+    #tab{
+        text-indent: 30px;
+        padding: 10px;
+        text-align: justify;
+        background-color: white;
+    }
+
+    #logoMaratona{
+        padding: 10px;
+        height: 200px;
+        width: 200px;
+    }
+
+    #logoMaratonaMini{
+        padding: 10px;
+        height: 70px;
+        width: 70px;
+    }
+}

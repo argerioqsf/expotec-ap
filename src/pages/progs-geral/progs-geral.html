@@ -1,0 +1,61 @@
+
+<ion-header >
+  <ion-navbar color="navbar">
+          <ion-row>
+              <button ion-button (click)="sideMenu()" clear item-start icon-only>
+                  <img id="menu" src="assets/images/menu_b.svg" /> 
+              </button>
+              <ion-title text-center><h5 id="titulo" text-center>Programação Geral</h5></ion-title>
+              <button ion-button (click)="Filtro()" clear item-end icon-only>
+                  <ion-icon [color]="filtro" name="md-funnel"></ion-icon> 
+              </button>
+          </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  id="fundo_app">
+  <h6 *ngIf="progs != null && progs.length == 0 && filtro == 'Todos'" id="horario" text-center>Não há programações</h6>
+  <h6 *ngIf="progs != null && progs.length == 0 && filtro != 'Todos' && filtro != 'Nárnia'" id="horario" text-center>Não há programações nesse local</h6>
+  <div *ngFor="let prog of progs">
+    
+    <h6 id="horario">{{prog.horaI}}</h6>
+    <div *ngIf=" progs != null && prog.progs.length != 0" id="fT">
+        <div *ngFor="let prog2 of prog.progs">
+          <div *ngIf="progs != null && prog2.local == filtro || filtro == 'Todos'">
+            <div (click)="info(prog2)" id="card">
+                  <p id="detalhe" [ngStyle]="{'border-left': '6px solid ' + prog2.cor}">
+                      <strong>{{prog2.titulo}}</strong><br>
+                      {{prog2.tipo}} <br>
+                      {{prog2.horario}}, <strong><a id="local">{{prog2.local}}</a></strong>
+                  </p>
+                  <div id="centro">
+                    <div *ngIf="prog.progs.length > 1" id="divisor"></div>
+                  </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div *ngIf="filtro == 'Nárnia'">
+      <div id="centro" *ngIf="filtro == 'Nárnia'">
+          <div  id="card">
+                   <ion-searchbar *ngIf="easterEgg && StorageEgg == false" id="inputPerder"  placeholder="G + P" [(ngModel)]="query" id="egg1-2" text-center (ionInput)="eggs2($event)"></ion-searchbar>
+          </div>
+      </div>
+  </div>
+  <div *ngIf="progs == null"  id="centro">
+      <ion-spinner id="spinner" color="light"  name="ios-small"></ion-spinner><br>
+  </div>
+  <div style="color: white;" *ngIf="progs == null"  id="centro">
+      CARREGANDO PROGRAMAÇÃO
+  </div>
+
+  
+      <div *ngIf="filtro == 'Nárnia'" class="edit" id="centro">
+        <ion-fab bottom>
+            <button id="perder" ion-fab (click)="perder()"><ion-icon id="perder2" name="md-play"></ion-icon></button>
+        </ion-fab>
+      </div>
+  
+</ion-content>
+

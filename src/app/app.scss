@@ -1,0 +1,151 @@
+// http://ionicframework.com/docs/theming/
+#menu-left{
+	margin-top: 7px;
+	margin-left: 7px;
+}
+
+#menu-right{
+    margin-top: 7px;
+    float: right;
+}
+
+#menu{
+	height: 30px;
+	width: 35px;
+}
+
+#voltar{
+	margin-left: 10px;
+	height: 20px;
+	width: 20px;
+}
+
+#filtro{
+	height: 25px;
+	width: 35px;
+}
+
+#fundo_app{
+    background-color: rgb(221, 220, 235)
+}
+
+#fundo_menu{
+	background-color: rgb(7, 90, 90);
+	color: white;
+}
+
+.logo_menu{
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+#logo{
+	height: 90%;
+	width: 90%;
+}
+
+#info{
+	text-align: center;
+    line-height: 1.5;
+	color: white;
+	padding: 5px;
+}
+
+#footer{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+    //transform: rotate(180deg); /* Standard syntax */
+}
+
+#egg1-1{
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
+}
+
+#RS{
+	padding: 5px;
+}
+
+#egg2{
+	margin-top: 100px;
+}
+
+#RSlogo{
+	height: 30px;
+	width: 30px;
+}
+
+#centro{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+#spinner{
+	width: 100px;
+	height: 100px;
+  }
+
+#detalhe{
+	padding: 10px 10px 10px 10px;
+	color: black;
+}
+
+#local{
+	color: black;
+}
+
+#horario{
+	color: rgb(103, 110, 117);
+	margin-left: 15px;
+}
+
+#titulo{
+	color: white !important;
+}
+
+#subtitulo{
+	color: rgb(103, 110, 117);
+	margin-left: 15px;
+	font-size: 14px;
+}
+
+#divisor{
+	background-color: rgb(184, 185, 187);
+	width: 90%;
+	height: 1px;
+}
+
+#egg1{
+	text-transform: uppercase;
+	font-size: 10px;
+	padding: 5px;
+	color: rgba(8, 99, 99, 0.582);
+}
+
+
+@keyframes example {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.edit{
+	position: fixed;
+	z-index: 101; 
+	bottom: 5px;
+}
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.

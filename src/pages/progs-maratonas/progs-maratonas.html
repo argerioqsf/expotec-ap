@@ -1,0 +1,53 @@
+
+<ion-header >
+  <ion-navbar color="navbar">
+          <ion-row>
+              <button ion-button (click)="sideMenu()" clear item-start icon-only>
+                  <img id="menu" src="assets/images/menu_b.svg" /> 
+              </button>
+              <ion-title text-center><h5 id="titulo" text-center>Maratonas</h5></ion-title>
+              <button ion-button (click)="Filtro()" clear item-end icon-only>
+                  <ion-icon [color]="filtro" name="md-funnel"></ion-icon> 
+              </button>
+          </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  id="fundo_app">
+  <h6 *ngIf="progs != null && progs.length == 0 && filtro == 'Todos'" id="horario" text-center>Não há programações</h6>
+  <h6 *ngIf="progs != null && progs.length == 0 && filtro != 'Todos'" id="horario" text-center>Não há progrmações hoje nesse local</h6>
+  <div *ngFor="let prog of progs">
+    <h6 id="horario">{{prog.horaI}}</h6>
+    <ion-card *ngFor="let prog2 of prog.progs" (click)="info(prog2)">
+        <div id="centro">
+            <img id="logoMaratona" src="{{prog2.imagem}}"/>
+        </div>
+      <ion-card-content>
+        <ion-card-title text-center>
+          {{prog2.titulo}}
+          </ion-card-title>
+        <ion-row no-padding [ngStyle]="{'border-left': '6px solid ' + prog2.cor}">
+          <ion-col id="centro">
+            <button ion-button clear small color="dark" icon-start>
+              <ion-icon name='md-time'></ion-icon>
+              {{prog2.dia}}, {{prog2.horario}}
+            </button>
+          </ion-col>
+          <ion-col id="centro">
+            <button ion-button clear small [ngStyle]="{'color': '' + prog2.cor}" icon-start>
+              <ion-icon name='md-map'></ion-icon>
+              {{prog2.local}}
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="progs == null"  id="centro">
+      <ion-spinner id="spinner" color="light"  name="ios-small"></ion-spinner><br>
+  </div>
+  <div style="color: white;" *ngIf="progs == null"  id="centro">
+      CARREGANDO PROGRAMAÇÃO
+  </div>
+  
+</ion-content>
