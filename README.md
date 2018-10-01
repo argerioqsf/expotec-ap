@@ -32,7 +32,7 @@
 ####
     ionic serve
 ## Para mais informações consulte estes links.
-* [Como integrar um projeto Ionic 2 com o Firebase - Medium](https://medium.com/@adsonrocha/como-integrar-um-projeto-ionic-2-com-o-firebase-ab228d84f445).
+* [Como criar um projeto no Firebase - Medium](https://medium.com/@adsonrocha/como-criar-um-projeto-no-firebase-273b984ea1b3).
 * [Ionic framework](https://ionicframework.com).
 * [Documentação Firebase](https://firebase.google.com/docs/web/setup).
     
