@@ -13,6 +13,7 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { AudioProvider } from '../providers/audio/audio';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
     BackgroundMode,
     AudioProvider,
     NativeAudio,
-    NativeStorage
+    NativeStorage,
+    NativePageTransitions
   ]
 })
 export class AppModule {}

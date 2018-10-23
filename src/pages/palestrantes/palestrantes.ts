@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController, AlertController, ModalController, ViewController, Platform } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { BackgroundMode } from '@ionic-native/background-mode';
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 
 /**
  * Generated class for the PalestrantesPage page.
@@ -21,6 +22,7 @@ export class PalestrantesPage {
   palestrantes = null;
   palestrantesSnap = [];
   egg = false;
+  options:NativeTransitionOptions;
   imageEgg = "assets/images/newUser-b.png";
   constructor(public navCtrl: NavController,
               private firebaseProvider: FirebaseProvider,
@@ -29,7 +31,8 @@ export class PalestrantesPage {
               private modalCtrl: ModalController,
               private viewCtrl: ViewController,
               private platform: Platform,
-              private backgroundMode: BackgroundMode) {
+              private backgroundMode: BackgroundMode,
+              private nativePageTransitions: NativePageTransitions) {
               this.palestrantesOn();
               this.egg = firebaseProvider.GetEgg1("egg11");
               this.platform.registerBackButtonAction(() => {
@@ -49,6 +52,29 @@ export class PalestrantesPage {
     this.imageEgg = "https://www.invertexto.com/barcodes/5bac89b242935.png";
   }
 
+  
+
+  ionViewWillLeave() {
+
+    this.options = {
+       direction: 'up',
+       duration: 500,
+       slowdownfactor: 3,
+       slidePixels: 20,
+       iosdelay: 100,
+       androiddelay: 400,
+       fixedPixelsTop: 0,
+       fixedPixelsBottom: 60
+      };
+   
+    this.nativePageTransitions.slide(this.options).then(sucesso=>{
+      console.log("sucesso nativePageTransitions");
+    }).catch(error=>{
+      console.log("erro nativePageTransitions");
+    });
+   
+   }
+
   palestrantesOn(){
       this.firebaseProvider.refOff("palestrantes/");
       this.firebaseProvider.refOn("palestrantes/").orderByChild('nome').on("value",(progSnap:any)=>{
@@ -60,6 +86,7 @@ export class PalestrantesPage {
 
   info(palestrante){
     console.log("palestrante: ",palestrante);
+    this.nativePageTransitions.drawer(this.options);
     let modal = this.modalCtrl.create("page-palestrantes-info",{id:palestrante.id});
     modal.onDidDismiss(data => {
       this.platform.registerBackButtonAction(() => {
